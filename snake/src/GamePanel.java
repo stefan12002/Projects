@@ -44,8 +44,8 @@ public class GamePanel extends JPanel implements ActionListener{
           //      g.drawLine(0, i * UNIT_SIZE, SCREEN_WIDTH, i * UNIT_SIZE);
            // }
             g.setColor(Color.red);
-            g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);//marimea marului
-            //serpisor body
+            g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+            
             for (int i = 0; i < bodyParts; i++) {
                 if (i == 0) {
                     g.setColor(Color.GREEN);
@@ -69,7 +69,7 @@ public class GamePanel extends JPanel implements ActionListener{
 
 }
 public void newApple(){
-//genereaza coordnatele noului apple
+
     appleX=random.nextInt(((int)SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
 appleY=random.nextInt(((int)SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
 }
@@ -101,25 +101,25 @@ switch (direction){
         }
     }
     public void checkCollisions(){
-        //checks if head collides with body
+        
 for(int i=bodyParts;i>0;i--){
     if((x[0]==x[i])&&(y[0]==y[i])){
         running=false;
     }
 }
-//check if head touches left border
-        if(x[0]<0){
+
+     if(x[0]<0){
             running=false;
         }
-        //check if head youches right border
+       
         if(x[0]>SCREEN_WIDTH){
             running=false;
         }
-        //chech if head touches top border
+        
         if(y[0]<0){
             running=false;
         }
-        //check if head touches bottom border
+       
         if(y[0]>SCREEN_HEIGHT){
             running=false;
         }
@@ -128,13 +128,13 @@ for(int i=bodyParts;i>0;i--){
         }
     }
     public void gameOver(Graphics g){
-        //Score
+        
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD,75));
         FontMetrics metrics1=getFontMetrics(g.getFont());
         g.drawString("Score: "+applesEaten,(SCREEN_WIDTH-metrics1.stringWidth("Score: "+applesEaten))/2,g.getFont().getSize());
 
-        //GameOver text
+        
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD,50));
         FontMetrics metrics2=getFontMetrics(g.getFont());
