@@ -3,10 +3,9 @@ import java.util.Scanner;
 
 public class Cont {
 Scanner scanner=new Scanner(System.in);
-DecimalFormat formatBani=new DecimalFormat("'$'###,###.00");//pentru a imparti un numar in cate 3 cifre
+DecimalFormat formatBani=new DecimalFormat("'$'###,###.00");
     private int idClient,pinClient;
     private double contCurent,contEconomii;
-//getteri setteri
     public int getIdClient() {
         return idClient;
     }
@@ -33,7 +32,7 @@ DecimalFormat formatBani=new DecimalFormat("'$'###,###.00");//pentru a imparti u
     return pinClient;
     }
 
-    //constructor
+   
 
  public double retragereContCurent(double suma){
         contCurent=contCurent-suma;
