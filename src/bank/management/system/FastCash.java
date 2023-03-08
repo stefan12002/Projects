@@ -28,32 +28,32 @@ public class FastCash extends JFrame implements ActionListener {
         text.setFont(new Font("System",Font.BOLD,16));
         image.add(text);
 
-        deposit=new JButton("Rs 100");
+        deposit=new JButton("Lei 100");
         deposit.setBounds(210,410,100,20);
         deposit.addActionListener(this);
         image.add(deposit);
 
-        withdrawal=new JButton("Rs 500");
+        withdrawal=new JButton("Lei 500");
         withdrawal.setBounds(420,410,130,20);
         withdrawal.addActionListener(this);
         image.add(withdrawal);
 
-        fastcash=new JButton("Rs 1000");
+        fastcash=new JButton("Lei 1000");
         fastcash.setBounds(210,435,100,20);
         fastcash.addActionListener(this);
         image.add(fastcash);
 
-        ministatement=new JButton("Rs 2000");
+        ministatement=new JButton("Lei 2000");
         ministatement.setBounds(420,435,130,20);
         ministatement.addActionListener(this);
         image.add(ministatement);
 
-        pinchange=new JButton("Rs 5000");
+        pinchange=new JButton("Lei 5000");
         pinchange.setBounds(210,460,100,20);
         pinchange.addActionListener(this);
         image.add(pinchange);
 
-        balanceEnquiry=new JButton("Rs 10000");
+        balanceEnquiry=new JButton("Lei 10000");
         balanceEnquiry.setBounds(420,460,130,20);
         balanceEnquiry.addActionListener(this);
         image.add(balanceEnquiry);
@@ -78,7 +78,7 @@ public class FastCash extends JFrame implements ActionListener {
           setVisible(false);
           new Transactions(pinnumber).setVisible(true);
         }else{
-            String amount=((JButton)ae.getSource()).getText().substring(3);//Rs=500
+            String amount=((JButton)ae.getSource()).getText().substring(3);
             Conn c=new Conn();
             try{
                 ResultSet rs=c.s.executeQuery("select*from bank where pin= '"+pinnumber+"'");
